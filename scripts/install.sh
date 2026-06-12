@@ -14,6 +14,7 @@ fi
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 INSTALL_DIR="$HOME/.local/bin"
+
 swift build -c release --package-path "$PROJECT_DIR"
 BIN_DIR="$(swift build -c release --package-path "$PROJECT_DIR" --show-bin-path)"
 
@@ -23,7 +24,8 @@ install -m 755 "$BIN_DIR/delses" "$INSTALL_DIR/delses"
 echo "Installed: $INSTALL_DIR/delses"
 
 case ":$PATH:" in
-  *":$INSTALL_DIR:"*) ;;
+  *":$INSTALL_DIR:"*)
+    ;;
   *)
     echo "Note: $INSTALL_DIR is not in PATH."
     echo "Add it manually if you want to run delses without a full path."

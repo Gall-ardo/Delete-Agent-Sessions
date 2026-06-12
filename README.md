@@ -35,7 +35,7 @@ scripts/install.sh
 
 `macOS 13+`
 
-`Xcode Command Line Tools / Swift toolchain`
+Xcode Command Line Tools / Swift toolchain
 
 Apple Silicon and Intel Mac supported via local build
 

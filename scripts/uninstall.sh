@@ -9,4 +9,5 @@ if [ -f "$TARGET" ]; then
 else
   echo "Not installed: $TARGET"
 fi
+
 echo "Archive preserved: $HOME/.delses"
