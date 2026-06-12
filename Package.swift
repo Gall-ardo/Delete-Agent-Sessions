@@ -10,7 +10,9 @@ let package = Package(
     products: [
         .executable(
             name: "delses",
-            targets: ["delses"]
+            targets: [
+                "delses",
+            ]
         ),
     ],
     targets: [
@@ -22,11 +24,15 @@ let package = Package(
         ),
         .executableTarget(
             name: "delses",
-            dependencies: ["DelsesCore"]
+            dependencies: [
+                "DelsesCore",
+            ]
         ),
         .testTarget(
             name: "DelsesCoreTests",
-            dependencies: ["DelsesCore"]
+            dependencies: [
+                "DelsesCore",
+            ]
         ),
     ]
 )
