@@ -1,6 +1,6 @@
 # Delete Agent Sessions
 
-`delses`
+CLI name: `delses`
 
 A tiny macOS CLI to safely archive, restore, and purge local Codex and Claude Code sessions.
 
@@ -10,6 +10,13 @@ A tiny macOS CLI to safely archive, restore, and purge local Codex and Claude Co
 `delses claude`  
 `delses restore`  
 `delses purge`
+
+## Controls
+
+`n`, `p`, `/word`, `/clear`, `q`  
+`1`, `1 2`, `1,2` selection  
+archive/restore confirmation: `yes`  
+purge confirmation: `purge`
 
 ## Install
 
@@ -22,15 +29,8 @@ scripts/install.sh
 ## Requirements
 
 `macOS 13+`  
-`Xcode Command Line Tools / Swift toolchain`
-
-## macOS compatibility
-
-- macOS 13+ is targeted.
-- Apple Silicon M1/M2/M3/M4 is supported.
-- The install script performs a local build, so the binary is compiled for the user's own architecture.
-- Universal release is not included currently; it can be added later if needed.
-
+`Xcode Command Line Tools / Swift toolchain`  
+Apple Silicon and Intel Mac supported via local build
 
 ## Data paths
 
@@ -38,12 +38,23 @@ scripts/install.sh
 `~/.delses/manifests`  
 `~/.delses/logs`
 
+## Safety
+
+`delses` does not permanently delete from Codex/Claude source directories.  
+`delses purge` only removes archived copies under `~/.delses/trash`.  
+No shell integration, no telemetry, no network, no background daemon.
+
 ## Uninstall
 
 ```bash
 scripts/uninstall.sh
 ```
 
-## Safety note
+Note: uninstall does not remove `~/.delses` archive data.
 
-Source Codex and Claude files are not permanently deleted directly. `delses purge` only removes the archived copy inside `~/.delses/trash`.
+## Development
+
+```bash
+swift test
+swift build -c release
+```

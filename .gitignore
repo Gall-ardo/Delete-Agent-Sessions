@@ -2,9 +2,9 @@
 .swiftpm/
 .DS_Store
 *.xcodeproj
-*.xcworkspace*
-*.env*
-*.env.*
+*.xcworkspace
+.env
+.env.*
 *.log
 .delses/
 .codex/

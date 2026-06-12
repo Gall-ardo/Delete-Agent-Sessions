@@ -606,14 +606,22 @@ struct DelsesCoreTests {
         #expect(!io.output.contains("<skills_instructions>"))
     }
 
-    @Test func readmeContainsMacOSCompatibilityText() throws {
+    @Test func readmeContainsRequiredProjectText() throws {
         let readme = try String(contentsOfFile: "/Users/gallardo/Projects/delses/README.md")
 
-        #expect(readme.contains("macOS 13+ is targeted."))
-        #expect(readme.contains("Apple Silicon M1/M2/M3/M4 is supported."))
-        #expect(readme.contains("Intel Mac is supported if Swift toolchain or Xcode Command Line Tools is installed."))
-        #expect(readme.contains("compiled for the user's own architecture"))
-        #expect(readme.contains("Universal release is not included currently"))
+        #expect(readme.contains("# Delete Agent Sessions"))
+        #expect(readme.contains("A tiny macOS CLI to safely archive, restore, and purge local Codex and Claude Code sessions."))
+        #expect(readme.contains("`delses codex`"))
+        #expect(readme.contains("`delses claude`"))
+        #expect(readme.contains("`delses restore`"))
+        #expect(readme.contains("`delses purge`"))
+        #expect(readme.contains("`n`, `p`, `/word`, `/clear`, `q`"))
+        #expect(readme.contains("`1`, `1 2`, `1,2` selection"))
+        #expect(readme.contains("archive/restore confirmation: `yes`"))
+        #expect(readme.contains("purge confirmation: `purge`"))
+        #expect(readme.contains("`macOS 13+`"))
+        #expect(readme.contains("Apple Silicon and Intel Mac supported via local build"))
+        #expect(readme.contains("No shell integration, no telemetry, no network, no background daemon."))
     }
 
     @Test func legacyManifestDoesNotUseSkillsInstructionsAsTitle() throws {
