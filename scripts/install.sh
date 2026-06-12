@@ -14,7 +14,6 @@ fi
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 INSTALL_DIR="$HOME/.local/bin"
-
 swift build -c release --package-path "$PROJECT_DIR"
 BIN_DIR="$(swift build -c release --package-path "$PROJECT_DIR" --show-bin-path)"
 

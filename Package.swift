@@ -5,25 +5,25 @@ import PackageDescription
 let package = Package(
     name: "delses",
     platforms: [
-        .macOS(.v13)
+        .macOS(.v13),
     ],
     products: [
-        .executable(name: "delses", targets: ["delses"])
+        .executable(name: "delses", targets: ["delses"]),
     ],
     targets: [
         .target(
             name: "DelsesCore",
             linkerSettings: [
-                .linkedLibrary("sqlite3")
-            ]
+                .linkedLibrary("sqlite3"),
+            ],
         ),
         .executableTarget(
             name: "delses",
-            dependencies: ["DelsesCore"]
+            dependencies: ["DelsesCore"],
         ),
         .testTarget(
             name: "DelsesCoreTests",
-            dependencies: ["DelsesCore"]
-        )
-    ]
+            dependencies: ["DelsesCore"],
+        ),
+    ],
 )
