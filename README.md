@@ -28,17 +28,9 @@ scripts/install.sh
 
 - macOS 13+ is targeted.
 - Apple Silicon M1/M2/M3/M4 is supported.
-- Intel Mac is supported if Swift toolchain or Xcode Command Line Tools is installed.
 - The install script performs a local build, so the binary is compiled for the user's own architecture.
 - Universal release is not included currently; it can be added later if needed.
 
-## Pagination
-
-`n`, `p`, `/word`, `/clear`, `q`
-
-## Multiple selection
-
-`1 2` or `1,2`
 
 ## Data paths
 
