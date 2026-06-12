@@ -1,0 +1,14 @@
+.build/
+.swiftpm/
+.DS_Store
+*.xcodeproj
+*.xcworkspace*
+*.env*
+*.env.*
+*.log
+.delses/
+.codex/
+.claude/
+*.sqlite
+*.db
+*.jsonl
